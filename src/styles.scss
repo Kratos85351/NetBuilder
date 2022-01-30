@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://use.typekit.net/svn1rut.css");
+
+$b-color-light: #F0FAFF;
+$white: #FFFF;
+
+html, body{
+  color: $white;
+  height: 100%;
+  background-color: $b-color-light;
+}

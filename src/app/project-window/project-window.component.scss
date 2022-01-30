@@ -1,0 +1,52 @@
+$bg-content-blue: #004378;
+
+.big-container{
+  height: 95.5%;
+  //background-color: yellow;
+}
+
+.banner{
+  font-family: myriad-pro-semi-condensed,sans-serif;
+  font-style: italic;
+  background-color: $bg-content-blue;
+  width: 17%;
+  height: 92%;
+  margin: 2% 3% 2% 3%;
+  padding: 3%;
+  padding-top: 2.5%;
+
+
+  &-title{
+    font-family: myriad-pro-semi-condensed, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &-link{
+    //text-align: center;
+  }
+}
+
+.big-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.content{
+  background-color: $bg-content-blue;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 92%;
+  margin-top: 2%;
+  margin-right: 3%;
+
+  &__imports{
+    display: flex;
+    flex-direction: row;
+    &-button{
+      color: red;
+    }
+  }
+
+}
