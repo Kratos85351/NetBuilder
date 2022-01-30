@@ -33,7 +33,8 @@ $bg-content-blue: #004378;
 }
 
 .content{
-  background-color: $bg-content-blue;
+  font-family: myriad-pro,sans-serif;
+  //background-color: $bg-content-blue;
   display: flex;
   flex-direction: column;
   width: 75%;
@@ -44,9 +45,37 @@ $bg-content-blue: #004378;
   &__imports{
     display: flex;
     flex-direction: row;
+    background-color: $bg-content-blue;
+    padding: 2%;
     &-button{
-      color: red;
+      width: 9%;
+      margin-left: 3%;
+      border-radius: 4px;
+      transition-duration: 125ms;
+      &:hover {
+        transform: scale(1.005);
+        box-shadow: 0 0 5px lighten($bg-content-blue, 80);
+        cursor: pointer;
+      }
+
+      &-text{
+        text-align: center;
+        margin-top: 7px;
+      }
     }
   }
 
+  &__page{
+    background-color: $bg-content-blue;
+    margin-top: 2%;
+    height: 100%;
+  }
+
+  &__buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    border: 1px solid red;
+  }
 }
+
