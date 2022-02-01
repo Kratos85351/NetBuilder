@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProjectsService} from "../services/projects.service";
+import {ProjectModel} from "../models/project.model";
 
 @Component({
   selector: 'app-project-window',
@@ -6,15 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-window.component.scss']
 })
 export class ProjectWindowComponent implements OnInit {
-  test = "disabled";
+  //test = "disabled";
+
   btn_text : boolean = false;
   btn_thumb : boolean = false;
   btn_list : boolean = true;
   btn_box : boolean = false;
 
-  constructor() { }
+  sortByValue! : string;
+
+  projectList! : ProjectModel[];
+  constructor(private projectService : ProjectsService) { }
 
   ngOnInit(): void {
+    this.projectList = this.projectService.projects;
   }
 
   textStateSwitch() {
@@ -56,9 +63,10 @@ export class ProjectWindowComponent implements OnInit {
 
   boxStateSwitch(){
     if(!this.btn_box && !this.btn_text){
+      if(!this.btn_thumb){this.btn_text = true;}
       this.btn_box = true;
       this.btn_list = false;
-      this.btn_text = true;
+      if(this.btn_text)this.btn_thumb = false;
     }else if (!this.btn_box && this.btn_text){
       this.btn_box = true;
       this.btn_list = false;
@@ -68,4 +76,11 @@ export class ProjectWindowComponent implements OnInit {
     }
   }
 
+  sortedByValueChanged(event: any) {
+    let name = "Name";
+    let lastEdited = "Last edited";
+    let custom = "Custom";
+
+   this.sortByValue = event.target.value;
+  }
 }

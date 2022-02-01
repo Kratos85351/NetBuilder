@@ -1,5 +1,6 @@
 $bg-content-blue: #004378;
 $b-light: #F0FAFF;
+$b-light-project-item : #02548C;
 
 .big-container{
   height: 95.5%;
@@ -85,7 +86,7 @@ $b-light: #F0FAFF;
     flex-direction: row;
     //justify-content: right;
     align-self: flex-end;
-    border: 1px solid red;
+    //border: 1px solid red;
     margin: 32px;
     height: 29px;
 
@@ -112,10 +113,20 @@ $b-light: #F0FAFF;
     display: flex;
     flex-direction: column;
     width: 88.5%;
-    height: 72%;
-    margin: 20px;
-    border: 1px solid red;
+    height: 75%;
+    margin: 12px;
+    overflow: auto;
+    //border: 1px solid red;
     //background-color: $b-light;
+
+    &-title{
+      font-family: MyriadPro-Bold, sans-serif;
+      font-size: 1.1em;
+    }
+
+    &-exif{
+     font-family: myriad-pro-semi-condensed, sans-serif;
+    }
   }
 }
 
@@ -146,4 +157,11 @@ $b-light: #F0FAFF;
     font-size: 0.875rem;
     border-radius: 0.2rem;
   }
+}
+
+.item-list-normal{
+  //border: 1px solid red;
+  background-color: $b-light-project-item;
+  padding: 20px;
+  margin-bottom: 10px;
 }

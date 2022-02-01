@@ -6,5 +6,7 @@ export class ProjectModel{
                public description : string
 
   ) {
+    this.name = name + ".xml";
+    this.user = "@" + user;
   }
 }
