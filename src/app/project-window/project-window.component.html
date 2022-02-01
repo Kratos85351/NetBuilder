@@ -15,11 +15,16 @@
     <div class="content__page">
       <div class="content__buttons">
         <div class="content__buttons-group-1">
-          <select class="pform-select pform-select-sm">
+          <select *ngIf="!btn_box" class="pform-select pform-select-sm">
             <option selected disabled>sort by</option>
             <option value="Name">Name</option>
             <option value="Last edited">Last edited</option>
             <option value="Custom">Custom</option>
+          </select>
+          <select *ngIf="btn_box" class="pform-select pform-select-sm">
+            <option selected disabled>sort by</option>
+            <option value="Name">Name</option>
+            <option value="Last edited">Last edited</option>
           </select>
           <div *ngIf="btn_text" (click)="textStateSwitch()" class="content-icon content-icon-text"><svg id="e775110f-ccb3-4312-a8ef-dd20455fbfb9" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.4 29"><defs><style>.aad11d71-de88-4264-8132-7ba30257626b{fill:#f1f9fe;}.b69f53f8-5a9c-408e-8bd9-79663c5be147{font-size:23px;fill:#0b4476;font-family:pt-serif-caption, PT Serif Caption, sans-serif;}</style></defs><rect class="aad11d71-de88-4264-8132-7ba30257626b" x="-0.02" y="-0.14" width="32.43" height="29" rx="1"/><text class="b69f53f8-5a9c-408e-8bd9-79663c5be147" transform="translate(8.17 22.86)">T</text></svg></div>
           <div *ngIf="!btn_text" (click)="textStateSwitch()" class="content-icon content-icon-text"><svg id="ec825d4f-2f36-4f76-96e6-a9d373cd9691" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.4 29"><defs><style>.bc08b511-3919-4ce9-a5b3-26b9198db32a{opacity:0.5;}.a3f792d7-7895-46b5-953f-365dfaae9d93{fill:#f1f9fe;}.f01200c9-4722-44d7-bb93-3d6554461f61{font-size:23px;fill:#0b4476;font-family:pt-serif-caption, PT Serif Caption, sans-serif;}</style></defs><g class="bc08b511-3919-4ce9-a5b3-26b9198db32a"><rect class="a3f792d7-7895-46b5-953f-365dfaae9d93" x="-0.02" y="-0.14" width="32.43" height="29" rx="1"/><text class="f01200c9-4722-44d7-bb93-3d6554461f61" transform="translate(8.17 22.86)">T</text></g></svg></div>
@@ -35,7 +40,11 @@
           <div *ngIf="!btn_box" (click)="boxStateSwitch()" class="content-icon content-icon-box"><svg id="ba3ecc16-22b8-41e7-87c4-c68869cb1afd" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.4 29"><defs><style>.f5891789-4acd-4c52-956d-b18ba5b89920{opacity:0.5;}.f0dd410b-e5ce-451a-bb83-f38649eac83b{fill:#f1f9fe;}.b5a9fbfe-6901-41f6-a91d-d079aefb7c5b{fill:#0b4476;}</style></defs><g class="f5891789-4acd-4c52-956d-b18ba5b89920"><rect class="f0dd410b-e5ce-451a-bb83-f38649eac83b" x="-0.02" width="32.43" height="29" rx="1"/><rect class="b5a9fbfe-6901-41f6-a91d-d079aefb7c5b" x="6.04" y="5" width="8.32" height="8" rx="1"/><rect class="b5a9fbfe-6901-41f6-a91d-d079aefb7c5b" x="6.04" y="16" width="8.32" height="8" rx="1"/><rect class="b5a9fbfe-6901-41f6-a91d-d079aefb7c5b" x="18.04" y="5" width="8.32" height="8" rx="1"/></g></svg></div>
         </div>
       </div>
-      <div class="content__projects">content__projects</div>
+
+      <div class="content__projects">content__projects
+        <div class="content__projects-item-list"></div>
+
+      </div>
     </div>
 
   </div>
