@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjectsService} from "../services/projects.service";
 import {ProjectModel} from "../models/project.model";
+import {endWith} from "rxjs";
 
 @Component({
   selector: 'app-project-window',
@@ -15,13 +16,14 @@ export class ProjectWindowComponent implements OnInit {
   btn_list : boolean = true;
   btn_box : boolean = false;
 
-  sortByValue! : string;
+  sortByValue : number [] = [0,0,0]; //[0] = name, [1] = lastEdited , [2] = custom;
 
   projectList! : ProjectModel[];
-  constructor(private projectService : ProjectsService) { }
+  constructor(private projectService : ProjectsService) {
+    this.projectList = this.projectService.projects;
+  }
 
   ngOnInit(): void {
-    this.projectList = this.projectService.projects;
   }
 
   textStateSwitch() {
@@ -77,10 +79,19 @@ export class ProjectWindowComponent implements OnInit {
   }
 
   sortedByValueChanged(event: any) {
-    let name = "Name";
-    let lastEdited = "Last edited";
-    let custom = "Custom";
+    let name = "name";
+    let lastEdited = "last edited";
+    let custom = "custom";
+    event.target.value == name ?
+      this.sortByValue [0] = 1
+      : this.sortByValue[0] = 0;
 
-   this.sortByValue = event.target.value;
+    event.target.value == lastEdited ?
+      this.sortByValue [1] = 1
+      : this.sortByValue[1] = 0;
+
+    event.target.value == custom ?
+      this.sortByValue [2] = 1
+      : this.sortByValue[2] = 0;
   }
 }

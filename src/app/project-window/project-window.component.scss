@@ -1,6 +1,7 @@
 $bg-content-blue: #004378;
 $b-light: #F0FAFF;
 $b-light-project-item : #02548C;
+$hover_item_b_light: #0071BC;
 
 .big-container{
   height: 95.5%;
@@ -78,7 +79,7 @@ $b-light-project-item : #02548C;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
+    //border: 1px solid red;
   }
 
   &__buttons{
@@ -159,9 +160,24 @@ $b-light-project-item : #02548C;
   }
 }
 
-.item-list-normal{
+.item-list{
   //border: 1px solid red;
   background-color: $b-light-project-item;
-  padding: 20px;
+  padding: 15px 15px 15px 20px;
   margin-bottom: 10px;
+
+  &-normal{}
+  &-drag{
+    display: flex;
+    flex-direction: row;
+    &-svg{
+      align-self: center;
+      width: 30px;
+      margin-right: 20px;
+    }
+  }
+
+  &:hover{
+    background-color: $hover_item_b_light;
+  }
 }

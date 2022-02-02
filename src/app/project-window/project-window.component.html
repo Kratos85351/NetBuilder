@@ -17,9 +17,9 @@
         <div class="content__buttons-group-1">
           <select *ngIf="!btn_box && !btn_thumb" class="pform-select pform-select-sm" (change)="sortedByValueChanged($event)">
             <option selected disabled>sort by</option>
-            <option value="Name">Name</option>
-            <option value="Last edited">Last edited</option>
-            <option value="Custom">Custom</option>
+            <option value="mame">Name</option>
+            <option value="last edited">Last edited</option>
+            <option value="custom">Custom</option>
           </select>
           <select *ngIf="btn_box || btn_thumb" class="pform-select pform-select-sm">
             <option selected disabled>sort by</option>
@@ -42,21 +42,49 @@
       </div>
 
       <div class="content__projects">
-        <div *ngIf="btn_list && !btn_text && !btn_thumb">
-          <div *ngFor="let projectItem of projectList" class="item-list-normal">
+        <div *ngIf="btn_list && !btn_text && !btn_thumb && !sortByValue[2]">
+          <div *ngFor="let projectItem of projectList" class="item-list item-list-normal">
             <p class="content__projects-title" style="margin-bottom: 1px">{{projectItem.name}}</p>
             <p class="content__projects-exif" style="margin-bottom: 2px;">Last modification on {{projectItem.date | date: 'dd.MM.yyyy'}} at {{projectItem.date.getHours()}}:{{projectItem.date.getMinutes()}}:{{projectItem.date.getSeconds()}} by {{projectItem.user}}</p>
           </div>
         </div>
 
-        <div class="item-list-drag">
-          <div *ngIf="btn_list && !btn_text && !btn_thumb">
-            <div *ngFor="let projectItem of projectList" class="item-list-normal">
+        <div *ngIf="btn_list && !btn_text && !btn_thumb && sortByValue[2]" cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+          <div *ngFor="let projectItem of projectList" class="item-list item-list-drag">
+            <div class="item-list-drag-svg">
+              <svg id="b2f47e63-04a9-463f-8716-c799f30810fb" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 11.5"><defs><style>.a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8{fill:none;stroke:#fff;stroke-miterlimit:10;}</style></defs><line class="a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8" x2="29"/><line class="a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8" y1="5.5" x2="29" y2="5.5"/><line class="a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8" y1="11.5" x2="29" y2="11.5"/></svg>
+            </div>
+
+            <div class="item-list-drag-cont">
               <p class="content__projects-title" style="margin-bottom: 1px">{{projectItem.name}}</p>
               <p class="content__projects-exif" style="margin-bottom: 2px;">Last modification on {{projectItem.date | date: 'dd.MM.yyyy'}} at {{projectItem.date.getHours()}}:{{projectItem.date.getMinutes()}}:{{projectItem.date.getSeconds()}} by {{projectItem.user}}</p>
             </div>
           </div>
         </div>
+
+
+        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let movie of movies" cdkDrag>
+            {{movie}} I can only be dragged using the handle
+
+            <div class="example-handle" cdkDragHandle>
+              <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+                ></path>
+                <path d="M0 0h24v24H0z" fill="none"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
 
         <div class="item-list-text"></div>
         <div class="item-list-text-drag"></div>
