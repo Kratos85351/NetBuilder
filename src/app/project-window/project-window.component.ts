@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {ProjectsService} from "../services/projects.service";
 import {ProjectModel} from "../models/project.model";
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import {endWith} from "rxjs";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-project-window',
@@ -10,6 +12,9 @@ import {endWith} from "rxjs";
   styleUrls: ['./project-window.component.scss']
 })
 export class ProjectWindowComponent implements OnInit {
+
+  animo!: string;
+  namer!: string;
 
   btn_text : boolean = false;
   btn_thumb : boolean = false;
@@ -19,12 +24,15 @@ export class ProjectWindowComponent implements OnInit {
   sortByValue : number [] = [0,0,0]; //[0] = name, [1] = lastEdited , [2] = custom;
 
   projectList! : ProjectModel[];
+  projectsSubscription = new Subscription();
 
-  constructor(private projectService : ProjectsService) {
-    this.projectList = this.projectService.projects;
+  constructor(private projectService : ProjectsService, public dialog: MatDialog) {
+    this.projectsSubscription = this.projectService.projectsSubject.subscribe(update => this.projectList = update);
+    //this.projectList = this.projectService.projects;
   }
 
   ngOnInit(): void {
+    this.projectService.updateSubscribers();
   }
 
   textStateSwitch() {
@@ -99,4 +107,51 @@ export class ProjectWindowComponent implements OnInit {
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.projectList, event.previousIndex, event.currentIndex);
   }
+
+
+  openDialog(): void {
+    let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '500px',
+      height: '300px',
+      data: { name: this.namer, animal: this.animo },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(this.projectList);
+      this.projectService.updateSubscribers();
+    });
+  }
+}
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html'
+})
+export class DialogOverviewExampleDialog {
+
+  form: FormGroup;
+
+  constructor(private projectService : ProjectsService, private fb: FormBuilder, public dialogRef: MatDialogRef<DialogOverviewExampleDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {
+    this.form = this.fb.group({
+      userName: new FormControl('', [Validators.required]),
+      projectName: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
+    });
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  onSubmit(){
+    // @ts-ignore
+    const userName = this.form.get('userName').value;
+    // @ts-ignore
+    const projectName = this.form.get('projectName').value;
+    // @ts-ignore
+    const description = this.form.get('description').value;
+    this.projectService.addProject(new ProjectModel(projectName, new Date(), userName, description));
+    this.dialogRef.close();
+  }
+
 }

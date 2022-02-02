@@ -210,6 +210,7 @@ $hover_item_b_light: #0071BC;
 
   &-thumb{
     width: 94%;
+    //max-height: 25%;
     display: flex;
     flex-direction: column;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -230,12 +231,15 @@ $hover_item_b_light: #0071BC;
 
   &-box-thumb{
     max-width: 45%;
-    min-height: 30%;
+    max-height: 35%;
+
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
     margin-right: 25px;
-    overflow: hidden;
+    overflow: auto;
+    //border: 1px solid red;
+
     &-topo{
       align-self: start;
       width: 100%;
@@ -257,13 +261,14 @@ $hover_item_b_light: #0071BC;
 #item-list-box-thumb{
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 #item-list-box-thumb-text{
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  //align-items: ;
 }
 
 .item-list-drag:active {
@@ -281,4 +286,6 @@ $hover_item_b_light: #0071BC;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
   0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
+
+
 

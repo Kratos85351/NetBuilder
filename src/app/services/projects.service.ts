@@ -1,10 +1,12 @@
 import {Injectable} from "@angular/core";
 import {ProjectModel} from "../models/project.model";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn : 'root'})
 
 export class ProjectsService{
+  projectsSubject = new Subject<any[]>();
 
   projects : ProjectModel [] = [
     new ProjectModel(
@@ -44,4 +46,13 @@ export class ProjectsService{
       "The WannaCry ransomware attack was a worldwide cyberattack in May 2017 by the WannaCry ransomware cryptoworm, which targeted computers running the Microsoft Windows operating system by encrypting data and demanding ransom payments in the Bitcoin cryptocurrency."
     )
   ]
+
+
+  addProject(projectModel : ProjectModel){
+  this.projects.push(projectModel)
+  }
+
+  updateSubscribers(){
+    this.projectsSubject.next(this.projects);
+  }
 }
