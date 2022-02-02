@@ -15,15 +15,21 @@
     <div class="content__page">
       <div class="content__buttons">
         <div class="content__buttons-group-1">
+          <form [formGroup]="form" class="form_2">
+            <mat-form-field>
+              <mat-label>Search project</mat-label>
+              <input matInput formControlName="search" type="text" name="none" (change)="onSearchCalled()">
+            </mat-form-field>
+          </form>
           <select *ngIf="!btn_box && !btn_thumb" class="pform-select pform-select-sm" (change)="sortedByValueChanged($event)">
             <option selected disabled>sort by</option>
-            <option value="mame">Name</option>
+            <option value="name">Name</option>
             <option value="last edited">Last edited</option>
             <option value="custom">Custom</option>
           </select>
-          <select *ngIf="btn_box || btn_thumb" class="pform-select pform-select-sm">
+          <select *ngIf="btn_box || btn_thumb" class="pform-select pform-select-sm" (change)="sortedByValueChanged($event)">
             <option selected disabled>sort by</option>
-            <option value="Name">Name</option>
+            <option value="name">Name</option>
             <option value="Last edited">Last edited</option>
           </select>
           <div *ngIf="btn_text" (click)="textStateSwitch()" class="content-icon content-icon-text"><svg id="e775110f-ccb3-4312-a8ef-dd20455fbfb9" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.4 29"><defs><style>.aad11d71-de88-4264-8132-7ba30257626b{fill:#f1f9fe;}.b69f53f8-5a9c-408e-8bd9-79663c5be147{font-size:23px;fill:#0b4476;font-family:pt-serif-caption, PT Serif Caption, sans-serif;}</style></defs><rect class="aad11d71-de88-4264-8132-7ba30257626b" x="-0.02" y="-0.14" width="32.43" height="29" rx="1"/><text class="b69f53f8-5a9c-408e-8bd9-79663c5be147" transform="translate(8.17 22.86)">T</text></svg></div>

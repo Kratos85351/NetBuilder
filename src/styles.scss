@@ -14,7 +14,7 @@ html, body{
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.forma {
+.formLayout {
   //border: 1px solid red;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   //height: 100vh;
 }
 
-form {
+.form {
   width: 400px;
   mat-form-field {
     display: block;
@@ -34,9 +34,33 @@ form {
   }
 }
 
+.form_2 {
+  width: 200px;
+  position: relative;
+  right: 10px;
+  top: -10px;
+  mat-form-field {
+    mat-label{
+      color: $b-color-light;
+      font-family: myriad-pro-semi-condensed, sans-serif;
+    }
+
+    input{
+      color: $b-color-light;
+      font-family: myriad-pro-semi-condensed, sans-serif;
+    }
+  }
+
+}
+
+
+
 .buttons{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   margin-right: 50px;
 }
+
+
+

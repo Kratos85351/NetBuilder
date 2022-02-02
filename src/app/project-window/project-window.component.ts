@@ -3,7 +3,7 @@ import {ProjectsService} from "../services/projects.service";
 import {ProjectModel} from "../models/project.model";
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {Form, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -13,8 +13,10 @@ import {Subscription} from "rxjs";
 })
 export class ProjectWindowComponent implements OnInit {
 
-  animo!: string;
-  namer!: string;
+  animo! : string;
+  namer! : string;
+  searchText! : string;
+  form!: FormGroup;
 
   btn_text : boolean = false;
   btn_thumb : boolean = false;
@@ -26,9 +28,12 @@ export class ProjectWindowComponent implements OnInit {
   projectList! : ProjectModel[];
   projectsSubscription = new Subscription();
 
-  constructor(private projectService : ProjectsService, public dialog: MatDialog) {
+  constructor(private projectService : ProjectsService, public dialog: MatDialog, private fb_2: FormBuilder) {
     this.projectsSubscription = this.projectService.projectsSubject.subscribe(update => this.projectList = update);
     //this.projectList = this.projectService.projects;
+    this.form = this.fb_2.group({
+      search: new FormControl(''),
+    });
   }
 
   ngOnInit(): void {
@@ -102,6 +107,8 @@ export class ProjectWindowComponent implements OnInit {
     event.target.value == custom ?
       this.sortByValue [2] = 1
       : this.sortByValue[2] = 0;
+
+    this.selectValueChanged(event);
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -121,6 +128,32 @@ export class ProjectWindowComponent implements OnInit {
       this.projectService.updateSubscribers();
     });
   }
+
+  selectValueChanged(event: any) {
+    let name = "name";
+
+    if (event.target.value == name)
+      this.projectList.sort(this.sortByName);
+  }
+
+  sortByName = function (a: any, b: any) {
+    let nameA = a.name.toUpperCase(); // ignore upper and lowercase
+    let nameB = b.name.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    // names must be equal
+    return 0;
+  }
+
+  onSearchCalled()
+  {
+    // @ts-ignore
+    this.searchText = this.form.get('search').value;
+  }
 }
 
 @Component({
@@ -131,7 +164,7 @@ export class DialogOverviewExampleDialog {
 
   form: FormGroup;
 
-  constructor(private projectService : ProjectsService, private fb: FormBuilder, public dialogRef: MatDialogRef<DialogOverviewExampleDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(private projectService : ProjectsService,private fb: FormBuilder , public dialogRef: MatDialogRef<DialogOverviewExampleDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.form = this.fb.group({
       userName: new FormControl('', [Validators.required]),
       projectName: new FormControl('', [Validators.required]),
