@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjectsService} from "../services/projects.service";
 import {ProjectModel} from "../models/project.model";
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import {endWith} from "rxjs";
 
 @Component({
@@ -9,7 +10,6 @@ import {endWith} from "rxjs";
   styleUrls: ['./project-window.component.scss']
 })
 export class ProjectWindowComponent implements OnInit {
-  //test = "disabled";
 
   btn_text : boolean = false;
   btn_thumb : boolean = false;
@@ -19,6 +19,7 @@ export class ProjectWindowComponent implements OnInit {
   sortByValue : number [] = [0,0,0]; //[0] = name, [1] = lastEdited , [2] = custom;
 
   projectList! : ProjectModel[];
+
   constructor(private projectService : ProjectsService) {
     this.projectList = this.projectService.projects;
   }
@@ -93,5 +94,9 @@ export class ProjectWindowComponent implements OnInit {
     event.target.value == custom ?
       this.sortByValue [2] = 1
       : this.sortByValue[2] = 0;
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.projectList, event.previousIndex, event.currentIndex);
   }
 }
