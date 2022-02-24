@@ -17,8 +17,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 
 const appRoutes : Routes = [
-  {path: '', component: ProjectWindowComponent}
-  //{path: 'signin', component: SigninComponent},
+  {path: '', component: HomepageComponent},
+  {path: 'projects', component: ProjectWindowComponent},
+  {path: 'topology', component: TopologyWindowsComponent}
   //{path: 'signup', component: SignupComponent},
 
 ]

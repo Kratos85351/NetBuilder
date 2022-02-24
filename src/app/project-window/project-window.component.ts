@@ -13,8 +13,6 @@ import {Subscription} from "rxjs";
 })
 export class ProjectWindowComponent implements OnInit {
 
-  animo! : string;
-  namer! : string;
   searchText! : string;
   form!: FormGroup;
 
@@ -118,9 +116,8 @@ export class ProjectWindowComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '500px',
-      height: '300px',
-      data: { name: this.namer, animal: this.animo },
+      width: '460px',
+      height: '268x'
     });
 
     dialogRef.afterClosed().subscribe((result) => {

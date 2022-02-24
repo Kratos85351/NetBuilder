@@ -1,9 +1,28 @@
 $header_blue: #004378;
 
 .header{
+  display: flex;
   background-color: $header_blue;
   height: 38px;
   color: $header_blue;
+  padding: 9px;
 }
 
+.menu{
+  margin-left: 9px;
+  font-family: myriad-pro, sans-serif;
+  &-link {
+    font-size: 14px;
+    margin-left: 15px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.signet-mini{
+  width: 25px;
+  margin-top: -3px;
+  margin-left: 6px;
+}
 

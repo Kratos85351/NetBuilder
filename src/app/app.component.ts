@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ProjectsService} from "./services/projects.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NetBuilder';
+
+  constructor(public projectService : ProjectsService) {
+  }
 }

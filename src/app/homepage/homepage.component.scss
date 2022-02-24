@@ -1,0 +1,44 @@
+$bg-content-blue: #004378;
+$b-light: #F0FAFF;
+$b-light-project-item : #02548C;
+
+*{
+  color: black;
+}
+
+.signet{
+  width: 60%;
+  margin-left: 20%;
+}
+.landing-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.landing-links {
+  width: 100%;
+  text-align: center;
+}
+
+.bigger{
+  font-size: 20px;
+}
+
+button{
+  background-color: $bg-content-blue;
+  color: $b-light;
+  padding: 10px;
+  //width: 9%;
+  margin-left: 3%;
+  border-radius: 4px;
+  transition-duration: 200ms;
+  &:hover {
+    //transform: scale(1.005);
+    //border: 1px solid #FFFF;
+    background-color: lighten($bg-content-blue, 7);
+    box-shadow: 0 0 5px lighten($bg-content-blue, 80);
+    cursor: pointer;
+  }
+}

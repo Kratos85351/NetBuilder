@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {ProjectsService} from "../services/projects.service";
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  onContinue() {
+    this.router.navigateByUrl('projects');
   }
 
 }
