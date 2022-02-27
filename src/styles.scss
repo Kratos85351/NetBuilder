@@ -3,6 +3,8 @@
 
 $b-color-light: #F0FAFF;
 $white: #FFFF;
+$b-light-project-item : #02548C;
+$hover_item_b_light: #0071BC;
 
 html, body{
   color: $white;
@@ -63,4 +65,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 
-
+.backdropBackground{
+  background-color: rgba(2, 84, 140, 0.23);
+  backdrop-filter: blur(2px);
+}

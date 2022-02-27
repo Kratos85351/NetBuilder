@@ -5,6 +5,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {Form, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-project-window',
@@ -117,7 +118,7 @@ export class ProjectWindowComponent implements OnInit {
   openDialog(): void {
     let dialogRef = this.dialog.open(NewTopologyDialog, {
       width: '460px',
-      height: '268x'
+      height: ''
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -129,12 +130,10 @@ export class ProjectWindowComponent implements OnInit {
   openAnimationDialog(): void {
     let dialogRef2 = this.dialog.open(AnimationDialog, {
       width: '260px',
-      height: '168x'
+      backdropClass: 'backdropBackground'
     });
 
     dialogRef2.afterClosed().subscribe((result) => {
-      console.log(this.projectList);
-      this.projectService.updateSubscribers();
     });
   }
 
@@ -203,11 +202,18 @@ export class NewTopologyDialog {
   templateUrl: 'animation-dialog.html',
   styleUrls: ['./animation-dialog.scss']
 })
-export class AnimationDialog {
+export class AnimationDialog implements OnInit{
 
-  constructor(public dialogRef: MatDialogRef<NewTopologyDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {
-
+  constructor(private router : Router, public dialogRef: MatDialogRef<NewTopologyDialog>) {
     };
+
+  ngOnInit(): void {
+    setTimeout(()=> {
+      this.router.navigateByUrl('topology');
+      this.dialogRef.close();
+    }, 2000);
+
+  }
 }
 
 
