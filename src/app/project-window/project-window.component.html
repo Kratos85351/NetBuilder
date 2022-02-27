@@ -49,14 +49,14 @@
 
       <div class="content__projects">
         <div *ngIf="btn_list && !btn_text && !btn_thumb && !sortByValue[2]">
-          <div *ngFor="let projectItem of projectList" class="item-list item-list-normal">
+          <div routerLink="/topology" *ngFor="let projectItem of projectList" class="item-list item-list-normal">
             <p class="content__projects-title" style="margin-bottom: 1px">{{projectItem.name}}</p>
             <p class="content__projects-exif" style="margin-bottom: 2px;">Last modification on {{projectItem.date | date: 'dd.MM.yyyy'}} at {{projectItem.date.getHours()}}:{{projectItem.date.getMinutes()}}:{{projectItem.date.getSeconds()}} by {{projectItem.user}}</p>
           </div>
         </div>
 
         <div *ngIf="btn_list && !btn_text && !btn_thumb && sortByValue[2]" cdkDropList class="drop-list" (cdkDropListDropped)="drop($event)">
-          <div *ngFor="let projectItem of projectList" class="item-list item-list-drag" cdkDrag>
+          <div routerLink="/topology" *ngFor="let projectItem of projectList" class="item-list item-list-drag" cdkDrag>
             <div class="item-list-drag-svg" cdkDragHandle>
               <svg id="b2f47e63-04a9-463f-8716-c799f30810fb" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 11.5"><defs><style>.a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8{fill:none;stroke:#fff;stroke-miterlimit:10;}</style></defs><line class="a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8" x2="29"/><line class="a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8" y1="5.5" x2="29" y2="5.5"/><line class="a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8" y1="11.5" x2="29" y2="11.5"/></svg>
             </div>
@@ -69,7 +69,7 @@
         </div>
 
         <div *ngIf="btn_list && btn_text && !btn_thumb && !sortByValue[2]">
-          <div *ngFor="let projectItem of projectList" class="item-list item-list-description" style="margin-bottom: 18px;">
+          <div routerLink="/topology" *ngFor="let projectItem of projectList" class="item-list item-list-description" style="margin-bottom: 18px;">
             <p class="content__projects-title" style="margin-bottom: 1px; margin-left: 10px;">{{projectItem.name}}</p>
             <p class="content__projects-exif" style="margin-bottom: 2px; margin-left: 10px;">Last modification on {{projectItem.date | date: 'dd.MM.yyyy'}} at {{projectItem.date.getHours()}}:{{projectItem.date.getMinutes()}}:{{projectItem.date.getSeconds()}} by {{projectItem.user}}</p>
             <p class="content__projects-description" style="margin-bottom: 2px; margin-top: 10px; margin-left: 10px;">{{projectItem.description}}</p>
@@ -77,7 +77,7 @@
         </div>
 
         <div id="item-list-text-drag" *ngIf="btn_list && btn_text && !btn_thumb && sortByValue[2]" cdkDropList class="drop-list" (cdkDropListDropped)="drop($event)">
-          <div *ngFor="let projectItem of projectList" class="item-list item-list-drag" cdkDrag>
+          <div routerLink="/topology" *ngFor="let projectItem of projectList" class="item-list item-list-drag" cdkDrag>
             <div class="item-list-drag-svg-description" cdkDragHandle>
               <svg id="b2f47e63-04a9-463f-8716-c799f30810fb" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 11.5"><defs><style>.a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8{fill:none;stroke:#fff;stroke-miterlimit:10;}</style></defs><line class="a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8" x2="29"/><line class="a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8" y1="5.5" x2="29" y2="5.5"/><line class="a1b594cd-1c43-4aa7-82f4-1b1c8c7501b8" y1="11.5" x2="29" y2="11.5"/></svg>
             </div>
@@ -91,7 +91,7 @@
         </div>
 
         <div *ngIf="btn_list && !btn_text && btn_thumb" id="item-list-thumb">
-          <div *ngFor="let projectItem of projectList" class="item-list item-list-thumb">
+          <div routerLink="/topology" *ngFor="let projectItem of projectList" class="item-list item-list-thumb">
             <div >
               <p class="content__projects-title" style="margin-bottom: 1px">{{projectItem.name}}</p>
               <p class="content__projects-exif" style="margin-bottom: 2px;">Last modification on {{projectItem.date | date: 'dd.MM.yyyy'}} at {{projectItem.date.getHours()}}:{{projectItem.date.getMinutes()}}:{{projectItem.date.getSeconds()}} by {{projectItem.user}}</p>
@@ -104,7 +104,7 @@
         </div>
 
         <div id="item-list-box-thumb" *ngIf="btn_box && !btn_text && btn_thumb" >
-          <div *ngFor="let projectItem of projectList" class="item-list item-list-box-thumb">
+          <div routerLink="/topology" *ngFor="let projectItem of projectList" class="item-list item-list-box-thumb">
             <div >
               <p class="content__projects-title" style="margin-bottom: 1px">{{projectItem.name}}</p>
               <p class="content__projects-exif" style="margin-bottom: 2px;">Last modification on {{projectItem.date | date: 'dd.MM.yyyy'}} at {{projectItem.date.getHours()}}:{{projectItem.date.getMinutes()}}:{{projectItem.date.getSeconds()}} by {{projectItem.user}}</p>
@@ -117,7 +117,7 @@
         </div>
 
         <div id="item-list-box-thumb-text" *ngIf="btn_box && btn_text">
-          <div *ngFor="let projectItem of projectList" class="item-list item-list-box-thumb">
+          <div routerLink="/topology" *ngFor="let projectItem of projectList" class="item-list item-list-box-thumb">
             <p class="content__projects-title" style="margin-bottom: 1px; margin-left: 10px;">{{projectItem.name}}</p>
             <p class="content__projects-exif" style="margin-bottom: 2px; margin-left: 10px;">Last modification on {{projectItem.date | date: 'dd.MM.yyyy'}} at {{projectItem.date.getHours()}}:{{projectItem.date.getMinutes()}}:{{projectItem.date.getSeconds()}} by {{projectItem.user}}</p>
             <p class="content__projects-description" style="margin-bottom: 2px; margin-top: 10px; margin-left: 10px;">{{projectItem.description}}</p>
