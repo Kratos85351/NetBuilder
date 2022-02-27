@@ -1,16 +1,18 @@
 $header_blue: #004378;
+$window-head-bgc: #003366;
+$b-light: #F0FAFF;
 
 .header{
   display: flex;
-  background-color: $header_blue;
+  color: $b-light;
+  background-color: $window-head-bgc;
   height: 38px;
   min-width: 1200px;
-  color: $header_blue;
   padding: 9px;
 }
 
 .menu{
-  margin-left: 9px;
+  margin-left: 6px;
   font-family: myriad-pro, sans-serif;
   &-link {
     font-size: 14px;

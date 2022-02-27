@@ -203,13 +203,14 @@ export class NewTopologyDialog {
 })
 export class AnimationDialog implements OnInit{
 
-  constructor(private router : Router, public dialogRef: MatDialogRef<NewTopologyDialog>) {
+  constructor(private router : Router, public dialogRef: MatDialogRef<NewTopologyDialog>, private projectService : ProjectsService) {
     };
 
   ngOnInit(): void {
     setTimeout(()=> {
       this.router.navigateByUrl('topology');
       this.dialogRef.close();
+      this.projectService.windowStateSwitch();
     }, 2000);
 
   }

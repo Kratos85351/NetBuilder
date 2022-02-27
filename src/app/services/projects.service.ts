@@ -7,7 +7,7 @@ import {Subject} from "rxjs";
 
 export class ProjectsService{
   projectsSubject = new Subject<any[]>();
-  appStates : boolean = true;
+  isTopologyWindowOpened : boolean = false;
 
   projects : ProjectModel [] = [
     new ProjectModel(
@@ -66,6 +66,9 @@ export class ProjectsService{
     )
   ]
 
+  public windowStateSwitch(){
+    this.isTopologyWindowOpened = !this.isTopologyWindowOpened;
+  }
 
   addProject(projectModel : ProjectModel){
   this.projects.push(projectModel)

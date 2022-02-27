@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {ProjectsService} from "../services/projects.service";
 
 @Component({
   selector: 'app-header',
@@ -33,13 +34,14 @@ export class HeaderComponent implements OnInit {
 })
 export class AnimationDialogSaving implements OnInit{
 
-  constructor(private router : Router, public dialogRef: MatDialogRef<AnimationDialogSaving>) {
+  constructor(private router : Router, public dialogRef: MatDialogRef<AnimationDialogSaving>, private projectService : ProjectsService) {
   };
 
   ngOnInit(): void {
     setTimeout(()=> {
       this.router.navigateByUrl('projects');
       this.dialogRef.close();
+      this.projectService.windowStateSwitch();
     }, 2500);
   }
 }
