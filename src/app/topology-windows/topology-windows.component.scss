@@ -1,0 +1,54 @@
+.big-container{
+ // background-color: yellow;
+  height: 95.3%;
+  width: 100%;
+  min-width: 1200px;
+  background-image: url("../../assets/topoGrid.svg");
+  background-size: 100px;
+}
+
+.big-container-grid-off{
+  // background-color: yellow;
+  height: 95.3%;
+  width: 100%;
+  min-width: 1200px;
+}
+
+.zoom{
+  //display: flex;
+  //flex-direction: column;
+  text-align: center;
+  width: 56px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
+  right: 5px;
+  top: 43px;
+  border-radius: 2.5px;
+  box-shadow: 0 0 5px rgba(37, 97, 172, 0.5);
+  overflow: hidden;
+  transition: height 250ms ease-out;
+  //transition-duration: 300ms;
+
+  &_value{
+    display: inline-block;
+    font-family: MyriadPro-Bold, sans-serif;
+    color: #003366;
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+  }
+
+  &:hover{
+    height: 155px;
+  }
+}
+
+#e275f7ff-482a-49e5-ad42-63e87463efff, #b5b7229d-cd5f-4a4b-a077-d77d6097b992, #ac98cc0d-354b-4afd-a30c-6920b966b992, #a056e68b-d5de-4ef7-b8ad-f3befbaf0fb9{
+  border-radius: 2.5px;
+  width: 30px;
+  height: 30px;
+  &:hover{
+    background-color: rgba(182, 192, 206, 0.3);
+  }
+}
