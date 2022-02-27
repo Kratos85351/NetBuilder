@@ -115,12 +115,24 @@ export class ProjectWindowComponent implements OnInit {
 
 
   openDialog(): void {
-    let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+    let dialogRef = this.dialog.open(NewTopologyDialog, {
       width: '460px',
       height: '268x'
     });
 
     dialogRef.afterClosed().subscribe((result) => {
+      console.log(this.projectList);
+      this.projectService.updateSubscribers();
+    });
+  }
+
+  openAnimationDialog(): void {
+    let dialogRef2 = this.dialog.open(AnimationDialog, {
+      width: '260px',
+      height: '168x'
+    });
+
+    dialogRef2.afterClosed().subscribe((result) => {
       console.log(this.projectList);
       this.projectService.updateSubscribers();
     });
@@ -154,14 +166,14 @@ export class ProjectWindowComponent implements OnInit {
 }
 
 @Component({
-  selector: 'dialog-overview-example-dialog',
+  selector: 'new-topology-dialog',
   templateUrl: 'new-topology-dialog.html'
 })
-export class DialogOverviewExampleDialog {
+export class NewTopologyDialog {
 
   form: FormGroup;
 
-  constructor(private projectService : ProjectsService,private fb: FormBuilder , public dialogRef: MatDialogRef<DialogOverviewExampleDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {
+  constructor(private projectService : ProjectsService, private fb: FormBuilder , public dialogRef: MatDialogRef<NewTopologyDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {
     this.form = this.fb.group({
       userName: new FormControl('', [Validators.required]),
       projectName: new FormControl('', [Validators.required]),
@@ -185,3 +197,17 @@ export class DialogOverviewExampleDialog {
   }
 
 }
+
+@Component({
+  selector: 'animation-dialog',
+  templateUrl: 'animation-dialog.html',
+  styleUrls: ['./animation-dialog.scss']
+})
+export class AnimationDialog {
+
+  constructor(public dialogRef: MatDialogRef<NewTopologyDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {
+
+    };
+}
+
+

@@ -1,0 +1,130 @@
+$main-width: 172.2px;
+$main-height: 170.84px;
+$margin-right: 50px;
+$opacity_from: 0;
+$frame_opacity_end_1: 0.16;
+$frame_opacity_end_2: 0.75;
+
+$e1_1_v1_2_anim: e1_v1_2 300ms ease-in;
+$e1_2_v1_2_anim: e1_2_v1_2 150ms ease-in 250ms;
+$e2_1_v1_2_anim: e2_v1_2 300ms ease-in 350ms;
+$e2_2_v1_2_anim: e2_2_v1_2 150ms ease-in 600ms;
+$e3_1_v1_2_anim: e3_v1_2 300ms ease-in 700ms;
+$e3_2_v1_2_anim: e3_2_v1_2 150ms ease-in 950ms;
+$e4_v1_2_anim: e4_v1_2 300ms ease-in 1050ms;
+
+* {
+  background-color: yellow;
+}
+#calque_9_v1_2 {
+  width: $main-width;
+  height: $main-height;
+  margin-right: $margin-right;
+}
+
+#e1_1_v1_2 {
+  animation: $e1_1_v1_2_anim;
+  animation-fill-mode: backwards; //transform-box: fill-box;
+}
+
+@keyframes e1_v1_2 {
+  0% {
+    opacity: $opacity_from;
+  }
+  100% {
+    opacity: $frame_opacity_end_1;
+  }
+}
+
+#e1_2_v1_2 {
+  animation: $e1_2_v1_2_anim;
+  animation-fill-mode: backwards; //transform-box: fill-box;
+  opacity: 0.75;
+}
+
+@keyframes e1_2_v1_2 {
+  0% {
+    opacity: $opacity_from;
+  }
+  100% {
+    opacity: $frame_opacity_end_2;
+  }
+}
+
+/*###############E2###############*/
+
+#e2_1_v1_2 {
+  animation: $e2_1_v1_2_anim;
+  animation-fill-mode: backwards; //transform-box: fill-box;
+}
+
+@keyframes e2_v1_2 {
+  0% {
+    opacity: $opacity_from;
+  }
+  100% {
+    opacity: $frame_opacity_end_1;
+  }
+}
+
+#e2_2_v1_2 {
+  animation: $e2_2_v1_2_anim;
+  animation-fill-mode: backwards; //transform-box: fill-box;
+  //opacity: 0.75;
+}
+
+@keyframes e2_2_v1_2 {
+  0% {
+    opacity: $opacity_from;
+  }
+  100% {
+    opacity: $frame_opacity_end_2;
+  }
+}
+
+/*###############E3###############*/
+
+#e3_1_v1_2 {
+  animation: $e3_1_v1_2_anim;
+  animation-fill-mode: backwards; //transform-box: fill-box;
+}
+
+@keyframes e3_v1_2 {
+  0% {
+    opacity: $opacity_from;
+  }
+  100% {
+    opacity: $frame_opacity_end_1;
+  }
+}
+
+#e3_2_v1_2 {
+  animation: $e3_2_v1_2_anim;
+  animation-fill-mode: backwards; //transform-box: fill-box;
+  //opacity: 0.75;
+}
+
+@keyframes e3_2_v1_2 {
+  0% {
+    opacity: $opacity_from;
+  }
+  100% {
+    opacity: $frame_opacity_end_2;
+  }
+}
+
+/*##############E4################*/
+
+#e4_v1_2 {
+  animation: $e4_v1_2_anim;
+  animation-fill-mode: backwards; //transform-box: fill-box;
+}
+
+@keyframes e4_v1_2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

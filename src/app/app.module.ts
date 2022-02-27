@@ -5,7 +5,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {DialogOverviewExampleDialog, ProjectWindowComponent} from './project-window/project-window.component';
+import {AnimationDialog, NewTopologyDialog, ProjectWindowComponent} from './project-window/project-window.component';
 import { TopologyWindowsComponent } from './topology-windows/topology-windows.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HeaderComponent } from './header/header.component';
@@ -30,7 +30,8 @@ const appRoutes : Routes = [
     TopologyWindowsComponent,
     HomepageComponent,
     HeaderComponent,
-    DialogOverviewExampleDialog
+    NewTopologyDialog,
+    AnimationDialog
   ],
     imports: [
         BrowserModule,
