@@ -155,7 +155,7 @@ export class ProjectWindowComponent implements OnInit {
 
 @Component({
   selector: 'dialog-overview-example-dialog',
-  templateUrl: 'dialog-overview-example-dialog.html'
+  templateUrl: 'new-topology-dialog.html'
 })
 export class DialogOverviewExampleDialog {
 
