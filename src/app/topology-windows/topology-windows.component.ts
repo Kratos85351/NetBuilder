@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {AnimationDialog, NewTopologyDialog} from "../project-window/project-window.component";
 
 @Component({
   selector: 'app-topology-windows',
@@ -25,10 +28,4 @@ export class TopologyWindowsComponent implements OnInit {
   onZoomMinus(){
     this.zoomValue -= 5;
   }
-
-  getGridStatus() : string{
-    if(this.gridState)
-      return ".big-container"
-    return ".big-container-grid-off";
-}
 }

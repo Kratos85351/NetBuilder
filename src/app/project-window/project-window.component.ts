@@ -118,7 +118,6 @@ export class ProjectWindowComponent implements OnInit {
   openDialog(): void {
     let dialogRef = this.dialog.open(NewTopologyDialog, {
       width: '460px',
-      height: ''
     });
 
     dialogRef.afterClosed().subscribe((result) => {

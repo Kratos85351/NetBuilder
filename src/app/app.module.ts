@@ -6,9 +6,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AnimationDialog, NewTopologyDialog, ProjectWindowComponent} from './project-window/project-window.component';
-import { TopologyWindowsComponent } from './topology-windows/topology-windows.component';
+import {TopologyWindowsComponent} from './topology-windows/topology-windows.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { HeaderComponent } from './header/header.component';
+import {AnimationDialogSaving, HeaderComponent} from './header/header.component';
 import {RouterModule, Routes} from "@angular/router";
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from "@angular/material/dialog";
@@ -31,7 +31,8 @@ const appRoutes : Routes = [
     HomepageComponent,
     HeaderComponent,
     NewTopologyDialog,
-    AnimationDialog
+    AnimationDialog,
+    AnimationDialogSaving
   ],
     imports: [
         BrowserModule,

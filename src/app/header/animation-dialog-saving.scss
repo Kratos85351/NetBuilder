@@ -5,27 +5,27 @@ $opacity_from: 0;
 $frame_opacity_end_1: 0.16;
 $frame_opacity_end_2: 0.75;
 
-
-$e1_1_v1_2_anim: e1_v1_2 300ms ease-in;
-$e1_2_v1_2_anim: e1_2_v1_2 150ms ease-in 250ms;
-$e2_1_v1_2_anim: e2_v1_2 300ms ease-in 350ms;
-$e2_2_v1_2_anim: e2_2_v1_2 150ms ease-in 600ms;
-$e3_1_v1_2_anim: e3_v1_2 300ms ease-in 700ms;
-$e3_2_v1_2_anim: e3_2_v1_2 150ms ease-in 950ms;
-$e4_v1_2_anim: e4_v1_2 300ms ease-in 1050ms;
-
-#calque_9_v1_2 {
+#calque_9_v3_2 {
   width: $main-width;
   height: $main-height;
   margin-right: $margin-right;
 }
 
-#e1_1_v1_2 {
-  animation: $e1_1_v1_2_anim;
+$e1_1_v3_2_anim: e1_v3_2 300ms ease-in infinite alternate;
+$e1_2_v3_2_anim: e1_2_v3_2 150ms ease-in 250ms infinite alternate;
+$e2_1_v3_2_anim: e2_v3_2 300ms ease-in 350ms infinite alternate;
+$e2_2_v3_2_anim: e2_2_v3 150ms ease-in 800ms infinite alternate;
+$e3_1_v3_2_anim: e3_1_v3_2 300ms ease-in 900ms infinite alternate;
+$e3_2_v3_2_anim: e3_2_v3 150ms ease-in 1250ms infinite alternate;
+$e4_v3_2_anim: e4_v3_2 300ms ease-in 1450ms infinite alternate;
+
+
+#e1_1_v3_2 {
+  animation: $e1_1_v3_2_anim;
   animation-fill-mode: backwards; //transform-box: fill-box;
 }
 
-@keyframes e1_v1_2 {
+@keyframes e1_v3_2 {
   0% {
     opacity: $opacity_from;
   }
@@ -34,13 +34,13 @@ $e4_v1_2_anim: e4_v1_2 300ms ease-in 1050ms;
   }
 }
 
-#e1_2_v1_2 {
-  animation: $e1_2_v1_2_anim;
+#e1_2_v3_2 {
+  animation: $e1_2_v3_2_anim;
   animation-fill-mode: backwards; //transform-box: fill-box;
   opacity: 0.75;
 }
 
-@keyframes e1_2_v1_2 {
+@keyframes e1_2_v3_2 {
   0% {
     opacity: $opacity_from;
   }
@@ -51,12 +51,12 @@ $e4_v1_2_anim: e4_v1_2 300ms ease-in 1050ms;
 
 /*###############E2###############*/
 
-#e2_1_v1_2 {
-  animation: $e2_1_v1_2_anim;
+#e2_1_v3_2 {
+  animation: $e2_1_v3_2_anim;
   animation-fill-mode: backwards; //transform-box: fill-box;
 }
 
-@keyframes e2_v1_2 {
+@keyframes e2_v3_2 {
   0% {
     opacity: $opacity_from;
   }
@@ -65,13 +65,13 @@ $e4_v1_2_anim: e4_v1_2 300ms ease-in 1050ms;
   }
 }
 
-#e2_2_v1_2 {
-  animation: $e2_2_v1_2_anim;
+#e2_2_v3_2 {
+  animation: $e2_2_v3_2_anim;
   animation-fill-mode: backwards; //transform-box: fill-box;
   //opacity: 0.75;
 }
 
-@keyframes e2_2_v1_2 {
+@keyframes e2_2_v3_2 {
   0% {
     opacity: $opacity_from;
   }
@@ -82,12 +82,12 @@ $e4_v1_2_anim: e4_v1_2 300ms ease-in 1050ms;
 
 /*###############E3###############*/
 
-#e3_1_v1_2 {
-  animation: $e3_1_v1_2_anim;
+#e3_1_v3_2 {
+  animation: $e3_1_v3_2_anim;
   animation-fill-mode: backwards; //transform-box: fill-box;
 }
 
-@keyframes e3_v1_2 {
+@keyframes e3_1_v3_2 {
   0% {
     opacity: $opacity_from;
   }
@@ -96,13 +96,13 @@ $e4_v1_2_anim: e4_v1_2 300ms ease-in 1050ms;
   }
 }
 
-#e3_2_v1_2 {
-  animation: $e3_2_v1_2_anim;
+#e3_2_v3_2 {
+  animation: $e3_2_v3_2_anim;
   animation-fill-mode: backwards; //transform-box: fill-box;
   //opacity: 0.75;
 }
 
-@keyframes e3_2_v1_2 {
+@keyframes e3_2_v3_2 {
   0% {
     opacity: $opacity_from;
   }
@@ -113,12 +113,12 @@ $e4_v1_2_anim: e4_v1_2 300ms ease-in 1050ms;
 
 /*##############E4################*/
 
-#e4_v1_2 {
-  animation: $e4_v1_2_anim;
+#e4_v3_2 {
+  animation: $e4_v3_2_anim;
   animation-fill-mode: backwards; //transform-box: fill-box;
 }
 
-@keyframes e4_v1_2 {
+@keyframes e4_v3_2 {
   0% {
     opacity: 0;
   }
