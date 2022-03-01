@@ -1,5 +1,6 @@
 $window-head-bgc: #003366;
 $b-light: #F0FAFF;
+$bg-cli: #1E1E1E;
 
 .big-container{
  // background-color: yellow;
@@ -121,10 +122,26 @@ $b-light: #F0FAFF;
   &-cli{
     width: 796px;
     min-width: 500px;
+    &--content{
+      font-family: "Courier New","courier-std", monospace, sans-serif;
+      font-style: normal;
+      padding: 0 1px 1px;
+      height: 100%;
+      &-box{
+        height: 90%;
+        padding: 5px;
+        background-color: $bg-cli;
+      }
+    }
   }
 
-  &-config{
+  &-settings{
     min-width: 320px;
+    &--content{
+      &-box{
+
+      }
+    }
   }
 }
 

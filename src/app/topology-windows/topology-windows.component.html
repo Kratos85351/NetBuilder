@@ -15,7 +15,7 @@
           <svg id="w-grip" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10"><defs><style>.ae8b0f8d-952a-4a25-afb6-1c1d45688b2e{fill:#fff;}</style></defs><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="4" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="8" width="15" height="2" rx="1"/></svg>
           <div class="mini-windows-head-text">Devices</div>
         </div>
-        <svg (click)="switchMiniWindowStateDevice()" [ngClass]="{'w-minimize': !miniWindowsStates[0], 'w-minimize__rotated': miniWindowsStates[0]}" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
+        <svg (click)="switchMiniWindowStateDevice()" [ngClass]="{'w-minimize': miniWindowsStates[0], 'w-minimize__rotated': !miniWindowsStates[0]}" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
       </div>
 
       <div  class="mini-windows-devices--content">
@@ -66,23 +66,50 @@
         </div>
       </div>
     </div>
+
     <div class="mini-windows mini-windows-cli" [ngStyle]="{height: getHeightCLI()}">
-      <div class="mini-windows-head">
+      <div class="mini-windows-head" style="background-color: #FFFFFF">
         <div class="mini-windows-head-group1">
-          <svg id="w-grip" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10"><defs><style>.ae8b0f8d-952a-4a25-afb6-1c1d45688b2e{fill:#fff;}</style></defs><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="4" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="8" width="15" height="2" rx="1"/></svg>
-          <div class="mini-windows-head-text">Router_DMZ</div>
+          <svg id="w-grip" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.03"><defs><style>.ad32b2c2-89b7-4057-814e-d31bae0052c0{fill:#0a4476;}</style></defs><rect class="ad32b2c2-89b7-4057-814e-d31bae0052c0" width="15" height="1.61" rx="0.8"/><rect class="ad32b2c2-89b7-4057-814e-d31bae0052c0" y="4.21" width="15" height="1.61" rx="0.8"/><rect class="ad32b2c2-89b7-4057-814e-d31bae0052c0" y="8.42" width="15" height="1.61" rx="0.8"/></svg>
+          <div class="mini-windows-head-text" style="color: #003366">Router_DMZ</div>
         </div>
-        <svg (click)="switchMiniWindowStateCLI()" [ngClass]="{'w-minimize': !miniWindowsStates[1], 'w-minimize__rotated': miniWindowsStates[1]}" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
+        <svg (click)="switchMiniWindowStateCLI()" [ngClass]="{'w-minimize': miniWindowsStates[1], 'w-minimize__rotated': !miniWindowsStates[1]}" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.bf3d6de7-9f52-4abe-8d8f-a2039c0846b0{fill:#0a4476;}</style></defs><path class="bf3d6de7-9f52-4abe-8d8f-a2039c0846b0" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bf3d6de7-9f52-4abe-8d8f-a2039c0846b0" width="15" height="2" rx="1"/></svg>
       </div>
+
+      <div  class="mini-windows-cli--content">
+        <div  class="mini-windows-cli--content-box">
+          <p>
+            Router_DMZ(config)# ip access-list extended FILTER_TRAFFIC_TO_INTERNET <br/>
+            Router_DMZ(config-ext-nacl)#remark Allow WWW and SSH from all hosts in the 192.168.0.0/24 network to the internet <br/>
+            Router_DMZ(config-ext-nacl)#permit tcp 192.168.0.0 0.0.255.255 any eq www <br/>
+            Router_DMZ(config-ext-nacl)#permit tcp 192.168.0.0 0.0.255.255 any eq 22 <br/>
+            Router_DMZ(config-ext-nacl)#deny ip any any Router_DMZ(config)#end <br/>
+            Router_DMZ(config)#ip inspect name INSPECT_TRAFFIC_TO_INTERNET tcp <br/>
+            Router_DMZ(config)#ip inspect name INSPECT_TRAFFIC_TO_INTERNET icmp <br/>
+            Router_DMZ(config)# Router_DMZ(config)#interface fastEthernet0/0 <br/>
+            Router_DMZ(config-if)#ip access-group FILTER_TRAFFIC_TO_INTERNET in <br/>
+            Router_DMZ(config-if)#IP inspect INSPECT_TRAFFIC_TO_INTERNET in
+          </p>
+        </div>
+      </div>
+
     </div>
-    <div class="mini-windows mini-windows-config" [ngStyle]="{height: getHeightSettings()}">
+
+    <div class="mini-windows mini-windows-settings" [ngStyle]="{height: getHeightSettings()}">
       <div class="mini-windows-head">
         <div class="mini-windows-head-group1">
           <svg id="w-grip" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10"><defs><style>.ae8b0f8d-952a-4a25-afb6-1c1d45688b2e{fill:#fff;}</style></defs><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="4" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="8" width="15" height="2" rx="1"/></svg>
           <div class="mini-windows-head-text">Pc1 - Settings</div>
         </div>
-        <svg (click)="switchMiniWindowStateSettings()" [ngClass]="{'w-minimize': !miniWindowsStates[2], 'w-minimize__rotated': miniWindowsStates[2]}" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
+        <svg (click)="switchMiniWindowStateSettings()" [ngClass]="{'w-minimize': miniWindowsStates[2], 'w-minimize__rotated': !miniWindowsStates[2]}" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
       </div>
+
+      <div  class="mini-windows-settings--content">
+        <div  class="mini-windows-settings--content-box">
+         <img src="assets/config-dummy.png" style="width: 422px">
+        </div>
+      </div>
+
     </div>
   </div>
 
