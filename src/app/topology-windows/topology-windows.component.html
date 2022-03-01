@@ -9,31 +9,79 @@
   </div>
 
   <div class="windows-container">
-    <div class="mini-windows mini-windows-devices">
+    <div class="mini-windows mini-windows-devices" [ngStyle]="{height: getHeightDevices()}">
       <div class="mini-windows-head">
         <div class="mini-windows-head-group1">
           <svg id="w-grip" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10"><defs><style>.ae8b0f8d-952a-4a25-afb6-1c1d45688b2e{fill:#fff;}</style></defs><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="4" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="8" width="15" height="2" rx="1"/></svg>
           <div class="mini-windows-head-text">Devices</div>
         </div>
-        <svg id="w-minimize" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
+        <svg (click)="switchMiniWindowStateDevice()" [ngClass]="{'w-minimize': !miniWindowsStates[0], 'w-minimize__rotated': miniWindowsStates[0]}" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
+      </div>
+
+      <div  class="mini-windows-devices--content">
+        <div class="mini-windows-devices--content--icon-box">
+          <img src="assets/devices/desktop.png" class="mini-windows-devices--content_icon">
+          <p class="device-name">Desktop</p>
+        </div>
+
+        <div class="mini-windows-devices--content--icon-box">
+          <img src="assets/devices/laptop.png" class="mini-windows-devices--content_icon" style="width: 77px">
+          <p class="device-name">Laptop</p>
+        </div>
+
+        <div class="mini-windows-devices--content--icon-box">
+          <img src="assets/devices/tablet.png" class="mini-windows-devices--content_icon" style="width: 49px">
+          <p class="device-name">Tablet</p>
+        </div>
+
+        <div class="mini-windows-devices--content--icon-box">
+          <img src="assets/devices/phone.png" class="mini-windows-devices--content_icon" style="width: 29.5px">
+          <p class="device-name">Phone</p>
+        </div>
+
+        <div class="mini-windows-devices--content--icon-box">
+          <img src="assets/devices/router.png" class="mini-windows-devices--content_icon" style="width: 58px">
+          <p class="device-name">Router</p>
+        </div>
+
+        <div class="mini-windows-devices--content--icon-box">
+          <img src="assets/devices/server.png" class="mini-windows-devices--content_icon" style="width: 54px">
+          <p class="device-name">Server</p>
+        </div>
+
+        <div class="mini-windows-devices--content--icon-box">
+          <img src="assets/devices/switch.png" class="mini-windows-devices--content_icon" style="width: 77px">
+          <p class="device-name">Switch</p>
+        </div>
+        <p style="color: white">blank text</p>
+
+        <div class="mini-windows-devices--content--icon-box">
+          <img src="assets/devices/antenna.png" class="mini-windows-devices--content_icon" style="width: 45px; margin-top: -15px">
+          <p class="device-name">Antenna</p>
+        </div>
+
+        <div class="mini-windows-devices--content--icon-box">
+          <img src="assets/devices/wap.png" class="mini-windows-devices--content_icon" style="width: 58px; margin-top: -15px">
+          <p class="device-name">WAP</p>
+        </div>
       </div>
     </div>
-    <div class="mini-windows mini-windows-cli">
+    <div class="mini-windows mini-windows-cli" [ngStyle]="{height: getHeightCLI()}">
       <div class="mini-windows-head">
         <div class="mini-windows-head-group1">
           <svg id="w-grip" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10"><defs><style>.ae8b0f8d-952a-4a25-afb6-1c1d45688b2e{fill:#fff;}</style></defs><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="4" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="8" width="15" height="2" rx="1"/></svg>
           <div class="mini-windows-head-text">Router_DMZ</div>
         </div>
-        <svg id="w-minimize" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
+        <svg (click)="switchMiniWindowStateCLI()" [ngClass]="{'w-minimize': !miniWindowsStates[1], 'w-minimize__rotated': miniWindowsStates[1]}" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
       </div>
     </div>
-    <div class="mini-windows mini-windows-config">
+    <div class="mini-windows mini-windows-config" [ngStyle]="{height: getHeightSettings()}">
       <div class="mini-windows-head">
         <div class="mini-windows-head-group1">
           <svg id="w-grip" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10"><defs><style>.ae8b0f8d-952a-4a25-afb6-1c1d45688b2e{fill:#fff;}</style></defs><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="4" width="15" height="2" rx="1"/><rect class="ae8b0f8d-952a-4a25-afb6-1c1d45688b2e" y="8" width="15" height="2" rx="1"/></svg>
           <div class="mini-windows-head-text">Pc1 - Settings</div>
         </div>
-        <svg id="w-minimize" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
+        <svg (click)="switchMiniWindowStateSettings()" [ngClass]="{'w-minimize': !miniWindowsStates[2], 'w-minimize__rotated': miniWindowsStates[2]}" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 10.75"><defs><style>.b650da7b-54b3-4775-a412-0c469660f3de,.bbe089fa-836b-45b1-999b-51612d8747a8{fill:#fff;}.b650da7b-54b3-4775-a412-0c469660f3de{stroke:#fff;stroke-miterlimit:10;stroke-width:2px;}</style></defs><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M14,1"/><path class="b650da7b-54b3-4775-a412-0c469660f3de" d="M1,1"/><path class="bbe089fa-836b-45b1-999b-51612d8747a8" d="M1,4l5.42,6.25a1.43,1.43,0,0,0,2.16,0L14,4"/><rect class="bbe089fa-836b-45b1-999b-51612d8747a8" width="15" height="2" rx="1"/></svg>
       </div>
     </div>
   </div>
